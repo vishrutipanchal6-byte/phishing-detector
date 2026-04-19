@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+
+<h2>{{url}}</h2>
+
+<h3>
+{% if result=="Safe" %}
+<span style="color:green;">✅ Safe</span>
+{% elif result=="Suspicious" %}
+<span style="color:orange;">⚠️ Suspicious</span>
+{% else %}
+<span style="color:red;">🚨 Phishing</span>
+{% endif %}
+<p style="text-align:center; font-weight:bold; margin-top:10px;">
+Risk Level: {{score}}
+</p>
+</h3>
+</div>
+
+<button onclick="window.history.back()">Back</button>
+
+</div>
+</div>
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-section">
+<h3>🔐 Phishing Detector</h3>
+<p>Free online security tool to detect phishing and malicious websites.</p>
+</div>
+
+<div class="footer-section">
+<h4>Security Tools</h4>
+<p>Domain Monitoring</p>
+<p>Phishing URL Scanner</p>
+<p>Email Protection</p>
+</div>
+
+<div class="footer-section">
+<h4>Resources</h4>
+<p>API</p>
+<p>Blog</p>
+<p>Glossary</p>
+</div>
+
+<div class="footer-section">
+<h4>Company</h4>
+<p>About</p>
+<p>Contact</p>
+<p>Privacy Policy</p>
+<p>Terms of Service</p>
+</div>
+
+</div>
+
+<p style="text-align:center; margin-top:20px;">
+© 2026 Phishing Detector | Stay Safe 🔐
+</p>
+
+</footer>
+
+</body>
+</html>

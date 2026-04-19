@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Messages</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 style="text-align:center;">📩 Messages</h2>
+
+<div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+
+{% for m in messages %}
+<div style="
+background:#222;
+color:white;
+padding:20px;
+border-radius:10px;
+width:300px;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+">
+
+<p><b>👤 Name:</b> {{m.name}}</p>
+<p><b>📧 Email:</b> {{m.email}}</p>
+<p><b>💬 Message:</b> {{m.message}}</p>
+<p><b>🕒 Date:</b> {{m.date}}</p>
+
+</div>
+{% endfor %}
+
+</div>
+
+</div>
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-section">
+<h3>🔐 Phishing Detector</h3>
+<p>Free online security tool to detect phishing and malicious websites.</p>
+</div>
+
+<div class="footer-section">
+<h4>Security Tools</h4>
+<p>Domain Monitoring</p>
+<p>Phishing URL Scanner</p>
+<p>Email Protection</p>
+</div>
+
+<div class="footer-section">
+<h4>Resources</h4>
+<p>API</p>
+<p>Blog</p>
+<p>Glossary</p>
+</div>
+
+<div class="footer-section">
+<h4>Company</h4>
+<p>About</p>
+<p>Contact</p>
+<p>Privacy Policy</p>
+<p>Terms of Service</p>
+</div>
+
+</div>
+
+<p style="text-align:center; margin-top:20px;">
+© 2026 Phishing Detector | Stay Safe 🔐
+</p>
+
+</footer>
+</body>
+</html>

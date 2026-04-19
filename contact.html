@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+
+<h2>Contact</h2>
+
+<form method="post">
+<input name="name" placeholder="Name">
+<input name="email" placeholder="Email">
+<textarea name="message"></textarea>
+<button>Send</button>
+</form>
+
+{% if success %}
+<p>Message Sent</p>
+{% endif %}
+
+</div>
+</div>
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-section">
+<h3>🔐 Phishing Detector</h3>
+<p>Free online security tool to detect phishing and malicious websites.</p>
+</div>
+
+<div class="footer-section">
+<h4>Security Tools</h4>
+<p>Domain Monitoring</p>
+<p>Phishing URL Scanner</p>
+<p>Email Protection</p>
+</div>
+
+<div class="footer-section">
+<h4>Resources</h4>
+<p>API</p>
+<p>Blog</p>
+<p>Glossary</p>
+</div>
+
+<div class="footer-section">
+<h4>Company</h4>
+<p>About</p>
+<p>Contact</p>
+<p>Privacy Policy</p>
+<p>Terms of Service</p>
+</div>
+
+</div>
+
+<p style="text-align:center; margin-top:20px;">
+© 2026 Phishing Detector | Stay Safe 🔐
+</p>
+
+</footer>
+</body>
+</html>

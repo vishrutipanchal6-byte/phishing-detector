@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>History</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="history-bg">
+
+<nav>
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/tips">Tips</a>
+<a href="/contact">Contact</a>
+</nav>
+
+<div class="container">
+
+<h2 style="text-align:center;">📜 URL History</h2>
+
+<div class="history-cards">
+
+{% for i in history %}
+<div class="history-card">
+
+<p><b>🔗 URL:</b> {{i.url}}</p>
+
+<p>
+<b>Status:</b>
+{% if i.result == "Safe" %}
+<span style="color:lightgreen;">✅ Safe</span>
+
+{% elif i.result == "Phishing" %}
+<span style="color:red;">🚨 Phishing</span>
+
+{% else %}
+<span style="color:orange;">⚠️ Suspicious</span>
+{% endif %}
+</p>
+
+<p>
+<b>Risk:</b>
+{% if i.result == "Safe" %}
+🟢 {{i.score}}
+
+{% elif i.result == "Phishing" %}
+🔴 {{i.score}}
+
+{% else %}
+🟠 {{i.score}}
+{% endif %}
+</p>
+
+<p><b>📅 Date:</b> {{i.date}}</p>
+
+</div>
+{% endfor %}
+
+</div>
+
+</div>
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-section">
+<h3>🔐 Phishing Detector</h3>
+<p>Free online security tool to detect phishing and malicious websites.</p>
+</div>
+
+<div class="footer-section">
+<h4>Security Tools</h4>
+<p>Domain Monitoring</p>
+<p>Phishing URL Scanner</p>
+<p>Email Protection</p>
+</div>
+
+<div class="footer-section">
+<h4>Resources</h4>
+<p>API</p>
+<p>Blog</p>
+<p>Glossary</p>
+</div>
+
+<div class="footer-section">
+<h4>Company</h4>
+<p>About</p>
+<p>Contact</p>
+<p>Privacy Policy</p>
+<p>Terms of Service</p>
+</div>
+
+</div>
+
+<p style="text-align:center; margin-top:20px;">
+© 2026 Phishing Detector | Stay Safe 🔐
+</p>
+
+</footer>
+</body>
+</html>
